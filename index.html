@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>dahamsa baduge — Data Science Student & ML Enthusiast</title>
+<meta name="description" content="Portfolio of dahamsa baduge — first-year Data Science student building ML models, dashboards, and AI-powered tools." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        },
+        colors: {
+          bg: '#0B1020',
+          card: '#141a2e',
+          fg: '#f4f6fb',
+          muted: '#9aa3b8',
+          accent: '#00D4FF',
+          electric: '#4F8CFF',
+        },
+      },
+    },
+  };
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="min-h-screen bg-bg text-fg font-sans antialiased overflow-x-hidden">
+
+<!-- ambient background -->
+<div class="pointer-events-none fixed inset-0 -z-20"
+     style="background:
+       radial-gradient(1200px 600px at 80% -10%, rgba(79,140,255,0.18), transparent 60%),
+       radial-gradient(900px 500px at -10% 20%, rgba(0,212,255,0.10), transparent 60%);">
+</div>
+
+<!-- scroll progress -->
+<div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-[3px] w-0 bg-gradient-to-r from-electric to-accent shadow-[0_0_10px_rgba(0,212,255,0.7)]"></div>
+
+<!-- NAV -->
+<header id="nav" class="fixed inset-x-0 top-0 z-50 py-4 transition-all duration-300">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 transition-all duration-300">
+    <a href="#home" class="flex items-center gap-2 font-display font-bold">
+      <span class="grid h-8 w-8 place-items-center rounded-lg text-[#0B1020] font-bold"
+            style="background:linear-gradient(135deg,#4F8CFF,#00D4FF);box-shadow:0 0 20px -2px rgba(79,140,255,0.6)">D</span>
+      <span>dahamsa<span class="text-gradient">.dev</span></span>
+    </a>
+    <ul class="hidden md:flex items-center gap-7 text-sm text-muted">
+      <li><a class="hover:text-fg transition" href="#about">About</a></li>
+      <li><a class="hover:text-fg transition" href="#skills">Skills</a></li>
+      <li><a class="hover:text-fg transition" href="#projects">Projects</a></li>
+      <li><a class="hover:text-fg transition" href="#experience">Experience</a></li>
+      <li><a class="hover:text-fg transition" href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="hidden md:inline-flex h-9 items-center rounded-lg px-4 text-sm font-medium glass hover:border-accent/40 transition">Let's talk</a>
+    <button id="menu-btn" class="md:hidden rounded-lg p-2 glass" aria-label="menu">☰</button>
+  </nav>
+  <div id="mobile-menu" class="md:hidden hidden mx-4 mt-2 rounded-2xl glass p-4">
+    <ul class="flex flex-col gap-2 text-sm">
+      <li><a href="#about" class="block rounded-lg px-3 py-2 hover:bg-white/5">About</a></li>
+      <li><a href="#skills" class="block rounded-lg px-3 py-2 hover:bg-white/5">Skills</a></li>
+      <li><a href="#projects" class="block rounded-lg px-3 py-2 hover:bg-white/5">Projects</a></li>
+      <li><a href="#experience" class="block rounded-lg px-3 py-2 hover:bg-white/5">Experience</a></li>
+      <li><a href="#contact" class="block rounded-lg px-3 py-2 hover:bg-white/5">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative isolate min-h-screen overflow-hidden pt-28 pb-20">
+  <div class="absolute inset-0 -z-10 grid-bg opacity-40"
+       style="mask-image:radial-gradient(60% 60% at 50% 40%,#000 30%,transparent 75%)"></div>
+  <canvas id="particles" class="absolute inset-0 -z-10 h-full w-full"></canvas>
+  <div class="absolute inset-0 -z-10"
+       style="background:radial-gradient(60% 80% at 50% 0%, rgba(79,140,255,0.25) 0%, rgba(0,212,255,0.08) 40%, transparent 70%)"></div>
+
+  <div class="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+    <div class="reveal">
+      <div class="inline-flex items-center gap-2 rounded-full glass px-3 py-1.5 text-xs text-muted">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+        </span>
+        Available for internships · Summer 2026
+      </div>
+      <h1 class="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
+        Hi, I'm <span class="text-gradient animate-gradient">dahamsa baduge</span>
+      </h1>
+      <p class="mt-5 text-xl sm:text-2xl text-muted">
+        <span id="typewriter" class="font-medium text-fg"></span><span class="inline-block w-[2px] h-6 bg-accent ml-1 animate-blink align-middle"></span>
+      </p>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-muted">
+        First-year Data Science student building intelligent systems from raw data.
+        I turn messy datasets into clear insights, predictive models, and dashboards people actually use.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="#projects" class="btn-hero">View Projects →</a>
+        <a href="#contact" class="btn-glass">✉ Contact Me</a>
+        <a href="#" class="btn-ghost">⬇ Resume</a>
+      </div>
+      <div class="mt-10 flex items-center gap-5 text-muted">
+        <a href="#" aria-label="GitHub" class="hover:text-accent">GitHub</a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-accent">LinkedIn</a>
+        <a href="#" aria-label="Email" class="hover:text-accent">Email</a>
+        <div class="h-px flex-1 bg-gradient-to-r from-white/15 to-transparent"></div>
+        <span class="font-mono text-xs">scroll ↓</span>
+      </div>
+    </div>
+
+    <div class="reveal relative mx-auto aspect-square w-full max-w-sm">
+      <div class="absolute inset-0 rounded-full blur-2xl opacity-60 animate-pulse-glow"
+           style="background:conic-gradient(from 180deg,rgba(79,140,255,0.6),rgba(0,212,255,0.4),rgba(79,140,255,0.6))"></div>
+      <div class="absolute inset-2 rounded-full glass overflow-hidden ring-1 ring-white/10">
+        <div class="h-full w-full grid place-items-center text-7xl font-display font-bold text-gradient">D</div>
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent"></div>
+      </div>
+      <span class="float-chip" style="left:8%;top:20%;animation-delay:0s">Python</span>
+      <span class="float-chip" style="left:82%;top:14%;animation-delay:1.2s">TensorFlow</span>
+      <span class="float-chip" style="left:12%;top:72%;animation-delay:.6s">SQL</span>
+      <span class="float-chip" style="left:78%;top:68%;animation-delay:1.8s">Power BI</span>
+      <span class="float-chip" style="left:4%;top:46%;animation-delay:.9s">Tableau</span>
+      <span class="float-chip" style="left:88%;top:42%;animation-delay:2.1s">Pandas</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="relative py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="reveal max-w-2xl">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">01 — About</p>
+      <h2 class="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">
+        Curious about data, <span class="text-gradient">obsessed with insight.</span>
+      </h2>
+      <p class="mt-5 text-muted">
+        I'm a first-year Data Science student who treats every dataset like a detective story.
+        My focus areas are machine learning, analytics engineering, and AI-powered decision tools.
+        I learn fastest by shipping — competitions, internships, side projects, repeat.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="stat reveal"><div class="text-accent text-xl">✨</div><p class="mt-6 font-display text-4xl font-bold counter" data-to="18" data-suffix="+">0</p><p class="mt-1 text-sm text-muted">Projects Completed</p></div>
+      <div class="stat reveal"><div class="text-accent text-xl">🏆</div><p class="mt-6 font-display text-4xl font-bold counter" data-to="9">0</p><p class="mt-1 text-sm text-muted">Certifications</p></div>
+      <div class="stat reveal"><div class="text-accent text-xl">🎯</div><p class="mt-6 font-display text-4xl font-bold counter" data-to="6">0</p><p class="mt-1 text-sm text-muted">Kaggle Competitions</p></div>
+      <div class="stat reveal"><div class="text-accent text-xl">🎓</div><p class="mt-6 font-display text-4xl font-bold counter" data-to="24" data-suffix="+">0</p><p class="mt-1 text-sm text-muted">Technologies</p></div>
+    </div>
+
+    <div class="mt-20 grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+      <div class="reveal glass rounded-2xl p-6">
+        <h3 class="font-display text-xl font-semibold">Background</h3>
+        <ul class="mt-4 space-y-3 text-sm text-muted">
+          <li>🎓 B.Sc. Data Science — Univ. of Mumbai (2023–2026)</li>
+          <li>📊 Diploma in Business Analytics — IIM Online (2024)</li>
+          <li>🧠 Specializations: ML, NLP, Analytics, MLOps fundamentals</li>
+          <li>🌍 Languages: English, Hindi, Marathi</li>
+        </ul>
+        <h3 class="mt-8 font-display text-xl font-semibold">What's next</h3>
+        <p class="mt-3 text-sm text-muted">
+          Looking for a 2026 Data Science / ML Engineering internship where I can ship models end-to-end and learn from a strong team.
+        </p>
+      </div>
+
+      <ol class="reveal relative space-y-6 pl-6">
+        <span class="absolute left-1.5 top-2 bottom-2 w-px bg-gradient-to-b from-accent via-electric to-transparent"></span>
+        <!-- timeline items -->
+        <li class="relative"><span class="dot"></span>
+          <div class="glass rounded-xl p-5">
+            <div class="flex flex-wrap items-baseline justify-between gap-2"><h4 class="font-display text-lg font-semibold">Final Year — B.Sc. Data Science</h4><span class="font-mono text-xs text-accent">2026</span></div>
+            <p class="text-xs uppercase tracking-wider text-muted">University of Mumbai</p>
+            <p class="mt-2 text-sm text-muted">Capstone: deep-learning sentiment system for low-resource languages.</p>
+          </div></li>
+        <li class="relative"><span class="dot"></span>
+          <div class="glass rounded-xl p-5">
+            <div class="flex flex-wrap items-baseline justify-between gap-2"><h4 class="font-display text-lg font-semibold">Data Science Intern</h4><span class="font-mono text-xs text-accent">2025</span></div>
+            <p class="text-xs uppercase tracking-wider text-muted">NebulaAnalytics (Remote)</p>
+            <p class="mt-2 text-sm text-muted">Built churn models & Power BI dashboards used by 12 retail clients.</p>
+          </div></li>
+        <li class="relative"><span class="dot"></span>
+          <div class="glass rounded-xl p-5">
+            <div class="flex flex-wrap items-baseline justify-between gap-2"><h4 class="font-display text-lg font-semibold">Kaggle Expert</h4><span class="font-mono text-xs text-accent">2024</span></div>
+            <p class="text-xs uppercase tracking-wider text-muted">Tabular Playground Series</p>
+            <p class="mt-2 text-sm text-muted">Top 8% finish across 4 competitions using gradient-boosted ensembles.</p>
+          </div></li>
+        <li class="relative"><span class="dot"></span>
+          <div class="glass rounded-xl p-5">
+            <div class="flex flex-wrap items-baseline justify-between gap-2"><h4 class="font-display text-lg font-semibold">First ML Project</h4><span class="font-mono text-xs text-accent">2023</span></div>
+            <p class="text-xs uppercase tracking-wider text-muted">Self-taught</p>
+            <p class="mt-2 text-sm text-muted">Built a house price predictor in scikit-learn — and got hooked.</p>
+          </div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="relative py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="reveal max-w-2xl">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">02 — Skills</p>
+      <h2 class="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">A stack built for <span class="text-gradient">end-to-end data work.</span></h2>
+    </div>
+    <div id="skills-grid" class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="relative py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="reveal flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-2xl">
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">03 — Projects</p>
+        <h2 class="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">Things I've <span class="text-gradient">shipped & learned from.</span></h2>
+      </div>
+      <a href="#" class="btn-glass">⬢ All on GitHub</a>
+    </div>
+    <div id="projects-grid" class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="relative py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="reveal max-w-2xl">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">04 — Experience</p>
+      <h2 class="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">Where I've worked & <span class="text-gradient">what I've earned.</span></h2>
+    </div>
+    <div class="mt-14 grid gap-10 lg:grid-cols-2">
+      <div>
+        <div class="mb-6 text-sm text-muted">💼 Experience</div>
+        <div class="space-y-5">
+          <div class="glass rounded-2xl p-6 reveal">
+            <div class="flex flex-wrap items-baseline justify-between gap-2"><h3 class="font-display text-lg font-semibold">Data Science Intern</h3><span class="font-mono text-xs text-accent">Jun 2025 – Sep 2025</span></div>
+            <p class="text-xs uppercase tracking-wider text-muted">NebulaAnalytics</p>
+            <ul class="mt-3 space-y-1.5 text-sm text-muted">
+              <li>• Built churn-prediction pipelines (XGBoost + SHAP) used across 12 retail clients.</li>
+              <li>• Reduced reporting time by 60% via automated Power BI refresh from SQL warehouse.</li>
+              <li>• Shipped an internal anomaly-detection alert system on AWS Lambda.</li>
+            </ul>
+          </div>
+          <div class="glass rounded-2xl p-6 reveal">
+            <div class="flex flex-wrap items-baseline justify-between gap-2"><h3 class="font-display text-lg font-semibold">Freelance Data Analyst</h3><span class="font-mono text-xs text-accent">2024 – Present</span></div>
+            <p class="text-xs uppercase tracking-wider text-muted">Independent</p>
+            <ul class="mt-3 space-y-1.5 text-sm text-muted">
+              <li>• Delivered 7 analytics projects for early-stage startups (D2C & EdTech).</li>
+              <li>• Built bespoke Looker / Power BI dashboards with custom DAX measures.</li>
+            </ul>
+          </div>
+          <div class="glass rounded-2xl p-6 reveal">
+            <div class="flex flex-wrap items-baseline justify-between gap-2"><h3 class="font-display text-lg font-semibold">Undergrad Research Assistant</h3><span class="font-mono text-xs text-accent">Aug 2024 – Apr 2025</span></div>
+            <p class="text-xs uppercase tracking-wider text-muted">Univ. of Mumbai — NLP Lab</p>
+            <ul class="mt-3 space-y-1.5 text-sm text-muted">
+              <li>• Co-authored paper on low-resource sentiment classification (under review).</li>
+              <li>• Curated a 40k-sample Marathi review dataset.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="mb-6 text-sm text-muted">🏅 Certifications</div>
+        <div id="certs-grid" class="grid gap-4 sm:grid-cols-2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="relative py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="reveal max-w-2xl">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">06 — Voices</p>
+      <h2 class="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">Kind words from <span class="text-gradient">people I've worked with.</span></h2>
+    </div>
+    <div id="testimonials" class="mt-14 grid gap-5 md:grid-cols-3"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative py-28">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="reveal max-w-2xl">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">07 — Contact</p>
+      <h2 class="mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">Let's build something <span class="text-gradient">data-driven together.</span></h2>
+      <p class="mt-4 text-muted">Internship offer, freelance project, or just want to talk models — my inbox is open.</p>
+    </div>
+    <div class="mt-14 grid gap-6 lg:grid-cols-[1fr_1.3fr]">
+      <div class="glass rounded-2xl p-6 flex flex-col gap-3 reveal">
+        <a href="mailto:dahamsa@example.com" class="contact-row"><span class="cicon">✉</span><div><p class="lbl">Email</p><p class="val">dahamsa@example.com</p></div></a>
+        <a href="#" class="contact-row"><span class="cicon">in</span><div><p class="lbl">LinkedIn</p><p class="val">/in/dahamsabaduge</p></div></a>
+        <a href="#" class="contact-row"><span class="cicon">⌥</span><div><p class="lbl">GitHub</p><p class="val">@dahamsabaduge</p></div></a>
+        <a href="#" class="contact-row"><span class="cicon">★</span><div><p class="lbl">Kaggle</p><p class="val">kaggle.com/dahamsabaduge</p></div></a>
+        <a href="#" class="contact-row"><span class="cicon">⌖</span><div><p class="lbl">Location</p><p class="val">Mumbai, India</p></div></a>
+      </div>
+      <form id="contact-form" class="glass rounded-2xl p-6 reveal">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="block"><span class="lbl">Name</span><input required placeholder="Jane Doe" class="input"/></label>
+          <label class="block"><span class="lbl">Email</span><input required type="email" placeholder="jane@company.com" class="input"/></label>
+        </div>
+        <label class="block mt-4"><span class="lbl">Subject</span><input required placeholder="Internship opportunity" class="input"/></label>
+        <label class="block mt-4"><span class="lbl">Message</span><textarea required rows="6" placeholder="Tell me about the role or project..." class="input resize-none"></textarea></label>
+        <button class="btn-hero mt-6 w-full justify-center" type="submit">Send message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative border-t border-white/5 pt-16 pb-8">
+  <div class="mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <a href="#home" class="inline-flex items-center gap-2 font-display text-lg font-bold">
+        <span class="grid h-8 w-8 place-items-center rounded-lg text-[#0B1020]" style="background:linear-gradient(135deg,#4F8CFF,#00D4FF)">D</span>
+        dahamsa<span class="text-gradient">.dev</span>
+      </a>
+      <p class="mt-4 max-w-sm text-sm text-muted">Data Science student building intelligent systems, clean dashboards, and the occasional weekend Kaggle solution.</p>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold">Navigate</h4>
+      <ul class="mt-4 space-y-2 text-sm text-muted">
+        <li><a class="hover:text-accent" href="#about">About</a></li>
+        <li><a class="hover:text-accent" href="#skills">Skills</a></li>
+        <li><a class="hover:text-accent" href="#projects">Projects</a></li>
+        <li><a class="hover:text-accent" href="#experience">Experience</a></li>
+        <li><a class="hover:text-accent" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold">Elsewhere</h4>
+      <div class="mt-4 flex gap-3 text-muted">
+        <a href="#" class="grid h-10 w-10 place-items-center rounded-lg glass hover:text-accent">GH</a>
+        <a href="#" class="grid h-10 w-10 place-items-center rounded-lg glass hover:text-accent">in</a>
+        <a href="#" class="grid h-10 w-10 place-items-center rounded-lg glass hover:text-accent">★</a>
+        <a href="#" class="grid h-10 w-10 place-items-center rounded-lg glass hover:text-accent">✉</a>
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto max-w-6xl px-6 mt-14 flex flex-col sm:flex-row justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted">
+    <p>© <span id="year"></span> dahamsa baduge. All rights reserved.</p>
+    <p>Built with ♥ AI & passion.</p>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="to-top" class="fixed bottom-6 right-6 z-40 hidden h-11 w-11 place-items-center rounded-full glass text-accent hover:border-accent/40">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
